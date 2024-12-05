@@ -1,39 +1,73 @@
 body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-style: normal;
+  background-color: white;
 }
-a:link{
-    color: darkslategray;
-    text-decoration: none;
+a:link {
+  color: darkslategray;
+  text-decoration: none;
 }
-a:visited{
-    color: darkslategray;
-    text-decoration: none;
+a:visited {
+  color: darkslategray;
+  text-decoration: none;
 }
-a:hover{
-    color:darkblue;
-    text-decoration: none;
+a:hover {
+  color: darkblue;
+  text-decoration: none;
 }
 header {
-    position: sticky;
-    margin: auto;
-    width: 95%;
-    margin-top: 2%;
+  position: sticky;
+  top: 0;
+  margin: auto;
+  width: 95%;
+  margin-top: 2%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  background-color: white;
+  font-size: large;
+  font-weight: 500;
   ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
   }
-  li {
+  li.select {
     margin: auto;
     border: transparent;
     border-style: hidden;
     border-radius: 5px;
-    background-color: black;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    background-color: gainsboro;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+    li.current {
+        margin: auto;
+    border: transparent;
+    border-style: hidden;
+    border-radius: 5px;
+    background-color: rgb(180, 180, 180);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    }
+  }
+  li.title {
+    margin: auto;
+    margin-right: 10%;
+    margin-left: 2.5%;
+    font-size: x-large;
+    font-weight: bold;
+    max-width: 20%;
   }
 }
 p {
-    width: 80%;
-
+  width: 90%;
+  margin: auto;
+  margin-top: 2%;
+  text-align: justify;
+}
+h1 {
+  width: 50%;
+  text-align: end;
+  margin-top: 4%;
 }
