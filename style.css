@@ -1,7 +1,7 @@
 @import
 url(//github.com/Born2Root/Fast-Font/blob/8a6519d4ce8d68d2fb97e0fd3a76fd5af901b613/Fast_Sans.ttf);
 body {
-  font-family: Fast-Font;
+  font-family: 'Fast Sans';
 }
 a:link {
   color: darkslategray;
