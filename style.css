@@ -62,23 +62,6 @@ li.current {
     font-weight: bold;
     max-width: 20%;
   }
-  .submenu{
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-    z-index: 10;
-    min-width: 150px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  li:hover > .submenu {
-    display: block;
-  }
 p {
   width: 90%;
   margin: auto;
