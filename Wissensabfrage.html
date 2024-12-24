@@ -23,51 +23,105 @@
       <p>
         Beantworten Sie die folgenden Fragen, um Ihr Wissen zu testen.
       </p>
-      <form action="Wissensabfrage.php" method="post">
+      <form id="quizForm">
         <ol>
           <li>
             <label for="frage1">Was ist ein Fakt?</label>
-            <input type="text" id="frage1" name="frage1" />
+            <div>
+              <input type="radio" id="frage1a" name="frage1" value="a" />
+              <label for="frage1a">Eine überprüfbare Wahrheit</label>
+            </div>
+            <div>
+              <input type="radio" id="frage1b" name="frage1" value="b" />
+              <label for="frage1b">Eine persönliche Meinung</label>
+            </div>
           </li>
           <li>
             <label for="frage2">Was ist eine Meinung?</label>
-            <input type="text" id="frage2" name="frage2" />
+            <div>
+              <input type="radio" id="frage2a" name="frage2" value="a" />
+              <label for="frage2a">Eine überprüfbare Wahrheit</label>
+            </div>
+            <div>
+              <input type="radio" id="frage2b" name="frage2" value="b" />
+              <label for="frage2b">Eine persönliche Ansicht</label>
+            </div>
           </li>
           <li>
             <label for="frage3">Was ist ein Fake?</label>
-            <input type="text" id="frage3" name="frage3" />
+            <div>
+              <input type="radio" id="frage3a" name="frage3" value="a" />
+              <label for="frage3a">Eine überprüfbare Wahrheit</label>
+            </div>
+            <div>
+              <input type="radio" id="frage3b" name="frage3" value="b" />
+              <label for="frage3b">Eine falsche Information</label>
+            </div>
           </li>
           <li>
             <label for="frage4">Was ist ein Faktor?</label>
-            <input type="text" id="frage4" name="frage4" />
+            <div>
+              <input type="radio" id="frage4a" name="frage4" value="a" />
+              <label for="frage4a">Eine überprüfbare Wahrheit</label>
+            </div>
+            <div>
+              <input type="radio" id="frage4b" name="frage4" value="b" />
+              <label for="frage4b">Ein Einfluss</label>
+            </div>
           </li>
           <li>
             <label for="frage5">Was ist ein Faktencheck?</label>
-            <input type="text" id="frage5" name="frage5" />
+            <div>
+              <input type="radio" id="frage5a" name="frage5" value="a" />
+              <label for="frage5a">Eine überprüfbare Wahrheit</label>
+            </div>
+            <div>
+              <input type="radio" id="frage5b" name="frage5" value="b" />
+              <label for="frage5b">Eine Überprüfung von Informationen</label>
+            </div>
           </li>
           <li>
             <label for="frage6">Was ist ein Fakenews?</label>
-            <input type="text" id="frage6" name="frage6" />
-          </li>
-          <li>
-            <label for="frage7">Was ist ein Faktencheck?</label>
-            <input type="text" id="frage7" name="frage7" />
-          </li>
-          <li>
-            <label for="frage8">Was ist ein Faktencheck?</label>
-            <input type="text" id="frage8" name="frage8" />
-          </li>
-          <li>
-            <label for="frage9">Was ist ein Faktencheck?</label>
-            <input type="text" id="frage9" name="frage9" />
-          </li>
-          <li>
-            <label for="frage10">Was ist ein Faktencheck?</label>
-            <input type="text" id="frage10" name="frage10" />
+            <div>
+              <input type="radio" id="frage6a" name="frage6" value="a" />
+              <label for="frage6a">Eine überprüfbare Wahrheit</label>
+            </div>
+            <div>
+              <input type="radio" id="frage6b" name="frage6" value="b" />
+              <label for="frage6b">Eine falsche Nachricht</label>
+            </div>
           </li>
         </ol>
-        <button type="submit">Absenden</button>
+        <button type="button" onclick="checkAnswers()">Absenden</button>
       </form>
+      <div id="feedback"></div>
     </main>
+    <script>
+      function checkAnswers() {
+        const correctAnswers = {
+          frage1: 'a',
+          frage2: 'b',
+          frage3: 'b',
+          frage4: 'b',
+          frage5: 'b',
+          frage6: 'b'
+        };
+        let score = 0;
+        const form = document.getElementById('quizForm');
+        const feedback = document.getElementById('feedback');
+        feedback.innerHTML = '';
+
+        for (const [question, answer] of Object.entries(correctAnswers)) {
+          const userAnswer = form.elements[question].value;
+          if (userAnswer === answer) {
+            score++;
+          } else {
+            feedback.innerHTML += `<p>Frage ${question.slice(-1)} ist falsch.</p>`;
+          }
+        }
+
+        feedback.innerHTML += `<p>Du hast ${score} von ${Object.keys(correctAnswers).length} Fragen richtig beantwortet.</p>`;
+      }
+    </script>
   </body>
 </html>
