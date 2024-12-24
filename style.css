@@ -70,7 +70,7 @@ p {
 }
 h1 {
   width: 50%;
-  text-align: center;
+  text-align: auto;
   margin-top: 4%;
 }
 footer {
